@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <title>Payment Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
 <body class="container">
     <header>
@@ -18,19 +19,19 @@
                         <legend>Title</legend>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="title" value="Mr">
+                                <input type="radio" name="title" value="Mr.">
                                 Mr.
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="title" value="Mrs">
+                                <input type="radio" name="title" value="Mrs.">
                                 Mrs.
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="title" value="Ms">
+                                <input type="radio" name="title" value="Ms.">
                                 Ms.
                             </label>
                         </div>
@@ -80,12 +81,22 @@
                         <input type="date" id="date" name="expirationDate">
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-outline-dark">submit payment</button>
+                    <button type="submit" data-modal="#myModal" class="btn btn-outline-primary">submit payment</button>
+                    <div id="myModal" class="modal">
+                        <p data-payment-form="submitText">Thanks for clicking.</p>
+                        <a href="#" rel="modal:close">Close</a>
+                    </div>
+                </form>
+                <br>
+                <form action="/index.html">
+                    <button class="btn btn-outline-dark">Click here to order more items</button>
                 </form>
             </div>
         </div>
+        
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="scripts/formhandler.js" charset="utf-8"></script>
     <script src="scripts/datastore.js" charset="utf-8"></script>
     <script src="scripts/truck.js" charset="utf-8"></script>
